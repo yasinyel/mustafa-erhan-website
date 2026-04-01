@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="tr" data-lang="tr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mustafa Erhan — Sanatçı</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%231C1410'/%3E%3Crect x='4' y='4' width='56' height='56' rx='4' fill='none' stroke='%23B8842A' stroke-width='1'/%3E%3Cpath d='M8,12 L8,4 L16,4' fill='none' stroke='%23B8842A' stroke-width='2'/%3E%3Cpath d='M56,12 L56,4 L48,4' fill='none' stroke='%23B8842A' stroke-width='2'/%3E%3Cpath d='M8,52 L8,60 L16,60' fill='none' stroke='%23B8842A' stroke-width='2'/%3E%3Cpath d='M56,52 L56,60 L48,60' fill='none' stroke='%23B8842A' stroke-width='2'/%3E%3Ctext x='15' y='44' font-family='serif' font-size='36' font-weight='700' font-style='italic' fill='%23F8F2E8'%3EME%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#F8F2E8;
+  --cream2:#F0E8D8;
+  --cream3:#E6DAC8;
+  --ink:#1C1410;
+  --ink2:#362C22;
+  --ink3:#7A6E62;
+  --gold:#96681A;
+  --gold2:#B8842A;
+  --gold3:#D4A84C;
+  --sienna:#7A3520;
+  --sage:#3D5248;
+  --w:#FFFFFF;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden}
+
+/* ── GRAIN TEXTURE OVERLAY ── */
+body::before{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat:repeat;background-size:180px}
+
+
+::-webkit-scrollbar{width:2px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--gold)}
+
+/* ── LOADER ── */
+#loader{position:fixed;inset:0;z-index:9999;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem}
+.ld-n{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,4.5rem);font-weight:300;font-style:italic;color:var(--cream);letter-spacing:.1em;opacity:0;animation:fadeUp .9s ease both .4s}
+.ld-b{width:160px;height:1px;background:rgba(245,239,226,.15);overflow:hidden;opacity:0;animation:fadeUp .6s ease both .7s}
+.ld-f{height:100%;width:0;background:var(--gold2);animation:fillB 1.6s ease both .9s}
+@keyframes fillB{to{width:100%}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:2rem 4rem;transition:all .4s;mix-blend-mode:multiply}
+nav.scrolled{mix-blend-mode:normal;background:rgba(245,239,226,.96);backdrop-filter:blur(16px);padding:1.1rem 4rem;border-bottom:1px solid rgba(168,120,40,.12)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400;font-style:italic;color:var(--ink);text-decoration:none;letter-spacing:.04em}
+.nav-links{display:flex;gap:2.8rem;list-style:none}
+.nav-links a{color:var(--ink3);text-decoration:none;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;transition:color .3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width .4s cubic-bezier(.23,1,.32,1)}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:1.2rem}
+.lang-btn{display:flex;align-items:center;background:transparent;border:1px solid rgba(26,22,18,.15);border-radius:30px;padding:.25rem .4rem;cursor:pointer;transition:border-color .3s;gap:.2rem}
+.lang-btn:hover{border-color:var(--gold)}
+.lang-opt{font-size:.58rem;font-weight:500;letter-spacing:.1em;padding:.28rem .65rem;border-radius:30px;transition:all .3s;color:var(--ink3);cursor:pointer}
+.lang-opt.active{background:var(--ink);color:var(--cream)}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.ham span{width:24px;height:1px;background:var(--ink);transition:.3s}
+
+/* ── HERO ── */
+#hero{height:100vh;min-height:700px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.hero-left{background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:5rem 4rem;position:relative;overflow:hidden}
+.hero-left-bg{position:absolute;inset:0;background:url('https://mustafaerhan.com/wp-content/uploads/2023/01/MUSTAFA-ERHAN.jpeg') center 20%/cover no-repeat;opacity:.28;transform:scale(1.05);will-change:transform}
+.hero-left-grad{position:absolute;inset:0;background:linear-gradient(to top, var(--ink) 30%, rgba(26,22,18,.4) 100%)}
+.hero-left-content{position:relative;z-index:2}
+.hero-eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;opacity:0;animation:fadeUp 1s ease both .8s}
+.hero-eyebrow-line{width:32px;height:1px;background:var(--gold2)}
+.hero-eyebrow-txt{font-size:.58rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold2)}
+.hero-name{font-family:'Playfair Display',serif;font-weight:300;line-height:.88;margin-bottom:2.5rem}
+.hero-name .n1{display:block;font-size:clamp(4rem,8vw,7.5rem);color:var(--cream);opacity:0;animation:fadeUp 1s cubic-bezier(.23,1,.32,1) both .9s}
+.hero-name .n2{display:block;font-size:clamp(4rem,8vw,7.5rem);font-style:italic;color:var(--gold2);opacity:0;animation:fadeUp 1s cubic-bezier(.23,1,.32,1) both 1.05s}
+.hero-desc-left{font-family:'EB Garamond',serif;font-size:1.05rem;font-style:italic;color:rgba(245,239,226,.5);line-height:1.7;max-width:300px;opacity:0;animation:fadeUp .9s ease both 1.2s}
+.hero-right{background:var(--cream);display:flex;flex-direction:column;justify-content:space-between;padding:5rem 4rem;position:relative}
+.hero-right-top{display:flex;justify-content:flex-end;padding-top:5rem}
+.hero-issue{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink3);text-align:right}
+.hero-issue span{display:block;font-family:'Playfair Display',serif;font-size:2rem;font-weight:300;color:var(--ink);letter-spacing:0;margin-top:.3rem}
+.hero-right-mid{text-align:right;opacity:0;animation:fadeUp .9s ease both 1.3s}
+.hero-countries{display:flex;flex-direction:column;gap:.5rem;align-items:flex-end;margin-bottom:2.5rem}
+.hc{font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink3);display:flex;align-items:center;gap:.8rem}
+.hc::after{content:'';width:20px;height:1px;background:var(--gold)}
+.hero-cta-wrap{display:flex;justify-content:flex-end;gap:1.2rem;opacity:0;animation:fadeUp .9s ease both 1.45s}
+.btn-dark{display:inline-flex;align-items:center;gap:.7rem;background:var(--ink);color:var(--cream);font-size:.6rem;font-weight:400;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;padding:.9rem 2rem;transition:all .4s;border:1px solid var(--ink)}
+.btn-dark:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.btn-outline{display:inline-flex;align-items:center;gap:.7rem;background:transparent;color:var(--ink);font-size:.6rem;font-weight:400;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;padding:.9rem 2rem;border:1px solid rgba(26,22,18,.25);transition:all .4s}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-right-bot{display:flex;justify-content:space-between;align-items:flex-end;opacity:0;animation:fadeUp .9s ease both 1.55s}
+.hero-scroll-area{display:flex;flex-direction:column;align-items:center;gap:.6rem}
+.hero-scroll-txt{font-size:.5rem;letter-spacing:.35em;text-transform:uppercase;color:var(--ink3);writing-mode:vertical-rl}
+.hero-scroll-ln{width:1px;height:50px;background:linear-gradient(to bottom,var(--gold),transparent);animation:pln 2s ease-in-out infinite}
+@keyframes pln{0%,100%{opacity:.7;transform:scaleY(1)}50%{opacity:.3;transform:scaleY(.4)}}
+.hero-nums-bot{display:flex;gap:3rem}
+.hn{text-align:right}
+.hn-v{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:300;color:var(--ink);line-height:1}
+.hn-l{font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);margin-top:.2rem}
+
+/* ── STRIP ── */
+.strip{overflow:hidden;padding:.6rem 0;background:var(--ink)}
+.strip-t{display:flex;animation:mq 22s linear infinite;white-space:nowrap}
+.si{display:inline-flex;align-items:center;gap:2rem;padding:0 2rem;flex-shrink:0}
+.si span{font-size:.55rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(245,239,226,.35);font-weight:400}
+.si-dot{width:3px;height:3px;border-radius:50%;background:var(--gold);flex-shrink:0}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── PHOTO STRIP (parallax divider) ── */
+.photo-strip{height:280px;overflow:hidden;position:relative}
+.photo-strip img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;will-change:transform;transition:none;filter:brightness(.7)saturate(.85)}
+.photo-strip-overlay{position:absolute;inset:0;background:linear-gradient(to right,var(--ink) 0%,transparent 20%,transparent 80%,var(--ink) 100%);pointer-events:none;z-index:1}
+.photo-strip-quote{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;pointer-events:none}
+.photo-strip-quote span{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.8rem);font-style:italic;font-weight:300;color:var(--cream);text-shadow:0 2px 30px rgba(0,0,0,.6);letter-spacing:.04em;text-align:center;padding:0 2rem}
+
+/* ── WAVE SECTION TRANSITIONS ── */
+.wave-top{position:relative}
+.wave-top::before{content:'';position:absolute;top:-60px;left:0;right:0;height:60px;background:inherit;clip-path:ellipse(55% 100% at 50% 100%);z-index:2}
+.wave-bot{position:relative}
+.wave-bot::after{content:'';position:absolute;bottom:-60px;left:0;right:0;height:60px;background:inherit;clip-path:ellipse(55% 100% at 50% 0%);z-index:2}
+
+/* ── SECTION BASE ── */
+section{position:relative;z-index:1}
+.c{max-width:1300px;margin:0 auto;padding:0 4rem}
+.sp{padding:8rem 0}
+.sp-sm{padding:6rem 0}
+.tag{font-size:.56rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem}
+.tag::before{content:'';width:24px;height:1px;background:var(--gold)}
+.h2{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,4.2rem);font-weight:300;line-height:1.05;margin-bottom:1.8rem;color:var(--ink)}
+.h2 em{font-style:italic;color:var(--gold)}
+.divider{width:100%;height:1px;background:rgba(26,22,18,.08)}
+
+/* ── ABOUT ── */
+#about{background:var(--w);position:relative;z-index:3}
+.about-layout{display:grid;grid-template-columns:1fr 3px 1fr;gap:0;min-height:600px}
+.about-img-col{position:relative;overflow:hidden}
+.about-img-col img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform 8s ease;filter:grayscale(20%)sepia(10%)}
+.about-img-col:hover img{transform:scale(1.04)}
+.about-mid-col{background:linear-gradient(to bottom,var(--gold3),var(--gold),var(--gold3));display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;font-size:.52rem;letter-spacing:.4em;text-transform:uppercase;color:var(--ink);font-weight:500;padding:1rem 0;position:relative;width:3px}
+.about-mid-col::before,.about-mid-col::after{content:'';position:absolute;left:50%;transform:translateX(-50%);width:8px;height:8px;border:1px solid var(--gold);border-radius:50%;background:var(--w)}
+.about-mid-col::before{top:2rem}
+.about-mid-col::after{bottom:2rem}
+.about-text-col{padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center}
+.about-lead{font-family:'EB Garamond',serif;font-size:1.45rem;font-style:italic;font-weight:400;line-height:1.65;color:var(--ink);margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(26,22,18,.08)}
+.about-body p{font-size:.88rem;line-height:2;color:var(--ink3);margin-bottom:.9rem}
+.about-body strong{color:var(--ink);font-weight:500}
+.about-stats{display:flex;gap:0;margin-top:3rem;border-top:1px solid rgba(26,22,18,.08)}
+.ast{flex:1;padding:1.5rem 0 0;border-right:1px solid rgba(26,22,18,.08);padding-right:1.5rem;margin-right:1.5rem}
+.ast:last-child{border-right:none;margin-right:0}
+.ast-n{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:300;color:var(--gold);line-height:1}
+.ast-l{font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink3);margin-top:.35rem}
+
+/* ── WORKS ── */
+#works{background:var(--cream)}
+.works-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem;padding-bottom:3rem;border-bottom:1px solid rgba(26,22,18,.1)}
+.works-header-r{font-family:'EB Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--ink3);line-height:1.7}
+.witem{display:grid;grid-template-columns:4.5rem 1fr auto;align-items:center;gap:3rem;padding:1.8rem 0;border-bottom:1px solid rgba(26,22,18,.07);cursor:pointer;transition:all .4s;position:relative}
+.witem::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:var(--gold);transition:width .4s cubic-bezier(.23,1,.32,1)}
+.witem::after{content:'♪';position:absolute;right:3rem;top:50%;transform:translateY(-50%) scale(0);font-size:3rem;color:var(--gold3);opacity:0;transition:all .5s cubic-bezier(.23,1,.32,1);pointer-events:none}
+.witem:hover::before{width:3px}
+.witem:hover::after{opacity:.12;transform:translateY(-50%) scale(1)}
+.witem:hover .wi-num{color:var(--gold)}
+.witem:hover .wi-name{color:var(--gold);transform:translateX(8px)}
+.witem:hover .wi-arr{opacity:1;transform:translateX(0)}
+.witem:hover{background:rgba(184,132,42,.03)}
+.wi-num{font-family:'Playfair Display',serif;font-size:.8rem;font-style:italic;color:rgba(26,22,18,.2);transition:.3s}
+.wi-name{font-family:'Playfair Display',serif;font-size:2rem;font-weight:300;font-style:italic;color:var(--ink);transition:all .4s cubic-bezier(.23,1,.32,1)}
+.wi-arr{font-size:.65rem;letter-spacing:.12em;color:var(--gold);opacity:0;transform:translateX(-10px);transition:.4s}
+
+/* ── GALLERY ── */
+#gallery{background:var(--ink);padding:8rem 0}
+.gallery-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem}
+.gallery-head .h2{color:var(--cream)}
+.gallery-head .tag{color:var(--gold)}
+.gallery-head .tag::before{background:var(--gold)}
+.gal-n{font-family:'Playfair Display',serif;font-size:7rem;font-weight:900;color:rgba(245,239,226,.04);line-height:1;font-style:italic}
+/* Masonry-like grid */
+.gal-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:260px 200px 240px;gap:6px;perspective:1200px}
+
+/* ── STAGGERED ENTRANCE ── */
+.g{overflow:hidden;position:relative;cursor:pointer;border-radius:4px;
+  opacity:0;transform:translateY(50px) scale(.92);
+  transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1),box-shadow .4s;
+  transform-style:preserve-3d;will-change:transform}
+.g.on{opacity:1;transform:translateY(0) scale(1)}
+.g1.on{transition-delay:0s}
+.g2.on{transition-delay:.08s}
+.g3.on{transition-delay:.16s}
+.g4.on{transition-delay:.22s}
+.g5.on{transition-delay:.3s}
+.g6.on{transition-delay:.36s}
+.g7.on{transition-delay:.42s}
+.g8.on{transition-delay:.5s}
+.g9.on{transition-delay:.56s}
+
+/* ── 3D TILT (applied via JS) ── */
+.g:hover{box-shadow:0 20px 50px rgba(0,0,0,.4);z-index:3}
+
+/* ── IMAGE ── */
+.g img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.23,1,.32,1),filter .5s;filter:brightness(.7)grayscale(30%);will-change:transform}
+.g:hover img{transform:scale(1.08);filter:brightness(1)grayscale(0)}
+
+/* ── GLASSMORPHISM OVERLAY ── */
+.g-ov{position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(26,22,18,.6) 0%,rgba(26,22,18,.1) 40%,transparent 100%);
+  opacity:0;transition:opacity .4s;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:1.2rem;pointer-events:none}
+.g-glass{position:absolute;bottom:0;left:0;right:0;
+  background:rgba(245,239,226,.08);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-top:1px solid rgba(245,239,226,.1);
+  padding:.9rem 1.2rem;
+  transform:translateY(100%);transition:transform .4s cubic-bezier(.23,1,.32,1);
+  display:flex;align-items:center;justify-content:space-between}
+.g:hover .g-ov{opacity:1}
+.g:hover .g-glass{transform:translateY(0)}
+.g-l{font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);font-weight:400}
+.g-icon{width:28px;height:28px;border-radius:50%;border:1px solid rgba(245,239,226,.2);display:flex;align-items:center;justify-content:center;color:var(--cream);font-size:.7rem;transition:all .3s;flex-shrink:0}
+.g:hover .g-icon{border-color:var(--gold2);color:var(--gold2)}
+
+.g1{grid-column:span 5;grid-row:span 2}
+.g2{grid-column:span 4}
+.g3{grid-column:span 3}
+.g4{grid-column:span 4}
+.g5{grid-column:span 3}
+.g6{grid-column:span 4}
+.g7{grid-column:span 4}
+.g8{grid-column:span 4}
+.g9{grid-column:span 5;grid-row:span 1}
+
+/* ── LIGHTBOX ── */
+#lb{display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,8,6,.97);backdrop-filter:blur(20px);align-items:center;justify-content:center}
+#lb.on{display:flex}
+#lb-img{max-width:85vw;max-height:85vh;object-fit:contain;box-shadow:0 0 80px rgba(0,0,0,.8)}
+.lb-x{position:absolute;top:1.8rem;right:2rem;background:none;border:1px solid rgba(245,239,226,.15);color:rgba(245,239,226,.5);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;transition:.3s}
+.lb-x:hover{border-color:var(--gold2);color:var(--gold2)}
+.lb-a{position:absolute;top:50%;transform:translateY(-50%);background:rgba(245,239,226,.06);border:1px solid rgba(245,239,226,.12);color:rgba(245,239,226,.6);width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;transition:.3s;z-index:1}
+.lb-a:hover{background:rgba(168,120,40,.2);border-color:var(--gold2);color:var(--gold2);transform:translateY(-50%) scale(1.07)}
+.lb-pv{left:2rem}.lb-nx{right:2rem}
+.lb-ct{position:absolute;bottom:1.8rem;left:50%;transform:translateX(-50%);font-size:.55rem;letter-spacing:.3em;color:rgba(245,239,226,.3);text-transform:uppercase}
+
+/* ── MUSIC ── */
+#music{background:var(--cream2);padding:8rem 0}
+.music-top{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem;padding-bottom:3rem;border-bottom:1px solid rgba(26,22,18,.1)}
+.music-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:start}
+.sp-wrap{border-radius:12px;overflow:hidden;box-shadow:0 4px 40px rgba(26,22,18,.12);border:1px solid rgba(168,120,40,.12)}
+.sp-wrap iframe{display:block;width:100%;border:0}
+.music-sidebar{display:flex;flex-direction:column;gap:1.2rem}
+.m-plat{display:flex;align-items:center;gap:1.4rem;background:var(--w);border:1px solid rgba(26,22,18,.07);padding:1.5rem 1.8rem;text-decoration:none;color:var(--ink);transition:all .4s;position:relative;overflow:hidden}
+.m-plat::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--clr);transform:scaleY(0);transition:.4s cubic-bezier(.23,1,.32,1)}
+.m-plat:hover::before{transform:scaleY(1)}
+.m-plat:hover{transform:translateX(6px);border-color:rgba(26,22,18,.15)}
+.m-ico{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;transition:.3s}
+.m-plat:hover .m-ico{transform:scale(1.08)}
+.m-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400;margin-bottom:.2rem;transition:color .3s}
+.m-plat:hover .m-name{color:var(--gold)}
+.m-sub{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+.m-arr{margin-left:auto;color:var(--ink3);font-size:.9rem;transition:.3s}
+.m-plat:hover .m-arr{color:var(--gold);transform:translate(3px,-3px)}
+.yt-p{--clr:#ff4444}.yt-p .m-ico{background:rgba(255,68,68,.07);color:#ff4444}
+.ig-p{--clr:#e1306c}.ig-p .m-ico{background:rgba(225,48,108,.07);color:#e1306c}
+.sp-info{background:var(--w);border:1px solid rgba(26,22,18,.07);padding:1.8rem;margin-top:.4rem}
+.sp-info-title{font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;display:flex;align-items:center;gap:.6rem}
+.sp-info p{font-size:.84rem;line-height:1.75;color:var(--ink3)}
+.sp-open-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-top:.9rem;transition:.3s}
+.sp-open-link:hover{color:var(--ink)}
+
+/* ── YOUTUBE VIDEOS ── */
+.yt-section{margin-top:5rem;padding-top:4rem;border-top:1px solid rgba(26,22,18,.1)}
+.yt-section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem}
+.yt-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.yt-card{position:relative;border-radius:10px;overflow:hidden;background:var(--w);border:1px solid rgba(26,22,18,.07);transition:all .4s;text-decoration:none;color:inherit;display:block}
+.yt-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(26,22,18,.1);border-color:rgba(168,120,40,.15)}
+.yt-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:#000}
+.yt-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.23,1,.32,1),filter .4s;filter:brightness(.85)}
+.yt-card:hover .yt-thumb img{transform:scale(1.05);filter:brightness(1)}
+.yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:rgba(255,0,0,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s;box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.yt-play::after{content:'';display:block;width:0;height:0;border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent #fff;margin-left:3px}
+.yt-card:hover .yt-play{transform:translate(-50%,-50%) scale(1.1);background:rgba(255,0,0,1)}
+.yt-card-info{padding:1.2rem 1.4rem}
+.yt-card-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;font-style:italic;color:var(--ink);margin-bottom:.3rem;transition:color .3s}
+.yt-card:hover .yt-card-title{color:var(--gold)}
+.yt-card-sub{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3)}
+
+/* ── EDUCATION ── */
+#education{background:var(--w);padding:8rem 0}
+.edu-layout{display:grid;grid-template-columns:400px 1fr;gap:8rem;align-items:start}
+.edu-left{position:sticky;top:7rem}
+.edu-left p{font-size:.88rem;line-height:1.9;color:var(--ink3);margin-top:1.5rem}
+.edu-items{display:flex;flex-direction:column;gap:0}
+.edu-it{display:grid;grid-template-columns:52px 1fr;gap:2rem;padding:2.2rem 0;border-bottom:1px solid rgba(26,22,18,.07);transition:.3s;cursor:default;align-items:start}
+.edu-it:first-child{border-top:1px solid rgba(26,22,18,.07)}
+.edu-it:hover .edu-ico{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.edu-ico{width:52px;height:52px;border:1px solid rgba(26,22,18,.15);display:flex;align-items:center;justify-content:center;font-size:.95rem;color:var(--gold);flex-shrink:0;transition:.3s;margin-top:.1rem}
+.edu-cat{font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.edu-ttl{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400;color:var(--ink);margin-bottom:.35rem}
+.edu-dsc{font-size:.8rem;line-height:1.65;color:var(--ink3)}
+
+/* ── CONTACT ── */
+#contact{background:var(--cream);padding:8rem 0}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:8rem}
+.contact-left{}
+.big-txt{font-family:'Playfair Display',serif;font-size:clamp(4rem,7vw,7.5rem);font-weight:900;line-height:.9;color:rgba(26,22,18,.05);margin-bottom:3rem;letter-spacing:-.02em}
+.contact-left p{font-size:.88rem;line-height:1.9;color:var(--ink3);margin-bottom:2.5rem}
+.contact-links{display:flex;flex-direction:column}
+.cl{display:flex;align-items:center;gap:1.4rem;text-decoration:none;color:var(--ink);padding:1.2rem 0;border-bottom:1px solid rgba(26,22,18,.08);transition:all .35s}
+.cl:first-child{border-top:1px solid rgba(26,22,18,.08)}
+.cl:hover{padding-left:.5rem;color:var(--gold)}
+.cl-ico{width:40px;height:40px;border:1px solid rgba(26,22,18,.15);display:flex;align-items:center;justify-content:center;font-size:.85rem;color:var(--ink3);flex-shrink:0;transition:.3s}
+.cl:hover .cl-ico{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.cl-nm{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3)}
+.cl-hd{font-size:.8rem;color:var(--ink);margin-top:.12rem;transition:.3s}
+.cl:hover .cl-hd{color:var(--gold)}
+.cl-ar{margin-left:auto;color:var(--ink3);font-size:.85rem;transition:all .3s}
+.cl:hover .cl-ar{color:var(--gold);transform:translate(3px,-3px)}
+.cform{display:flex;flex-direction:column;gap:1.1rem}
+.cf2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.fg{display:flex;flex-direction:column;gap:.4rem}
+.fg label{font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink3)}
+.fg input,.fg textarea{background:var(--w);border:1px solid rgba(26,22,18,.12);color:var(--ink);font-family:'Inter',sans-serif;font-size:.84rem;font-weight:300;padding:.9rem 1rem;outline:none;transition:.3s;cursor:pointer}
+.fg input:focus,.fg textarea:focus{border-color:var(--gold);background:var(--cream)}
+.fg textarea{resize:vertical;min-height:130px}
+.btn-send{align-self:flex-start;background:var(--ink);color:var(--cream);border:1px solid var(--ink);font-family:'Inter',sans-serif;font-size:.58rem;font-weight:400;letter-spacing:.3em;text-transform:uppercase;padding:.9rem 2.4rem;cursor:pointer;transition:all .4s;overflow:hidden;position:relative}
+.btn-send::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateX(-101%);transition:.4s cubic-bezier(.23,1,.32,1)}
+.btn-send:hover{border-color:var(--gold);color:var(--ink)}
+.btn-send:hover::before{transform:translateX(0)}
+.btn-send span{position:relative;z-index:1}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:0;position:relative;overflow:hidden}
+footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--gold2),transparent)}
+.foot-top{padding:5rem 0 3rem;text-align:center;position:relative}
+.foot-logo{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:300;font-style:italic;color:var(--cream);letter-spacing:.06em;margin-bottom:.8rem}
+.foot-tagline{font-size:.58rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold2);margin-bottom:2.5rem}
+.foot-social{display:flex;justify-content:center;gap:1rem;margin-bottom:3rem}
+.foot-social a{width:42px;height:42px;border:1px solid rgba(245,239,226,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(245,239,226,.4);text-decoration:none;transition:all .4s;font-size:.85rem}
+.foot-social a:hover{border-color:var(--gold2);color:var(--gold2);transform:translateY(-3px);box-shadow:0 6px 20px rgba(184,132,42,.15)}
+.foot-divider{width:120px;height:1px;background:linear-gradient(to right,transparent,rgba(245,239,226,.12),transparent);margin:0 auto 2.5rem}
+.foot-links{display:flex;justify-content:center;gap:2.5rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.foot-links a{font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,239,226,.3);text-decoration:none;transition:all .3s;position:relative}
+.foot-links a::after{content:'';position:absolute;bottom:-4px;left:50%;width:0;height:1px;background:var(--gold2);transition:all .3s;transform:translateX(-50%)}
+.foot-links a:hover{color:var(--gold2)}
+.foot-links a:hover::after{width:100%}
+.foot-bot{border-top:1px solid rgba(245,239,226,.06);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center}
+.foot-copy{font-size:.55rem;letter-spacing:.12em;color:rgba(245,239,226,.15);text-transform:uppercase}
+.foot-craft{font-size:.5rem;letter-spacing:.2em;color:rgba(245,239,226,.1);text-transform:uppercase}
+/* Large decorative text behind footer */
+.foot-bg-txt{position:absolute;bottom:-1.5rem;left:50%;transform:translateX(-50%);font-family:'Playfair Display',serif;font-size:clamp(6rem,15vw,14rem);font-weight:900;font-style:italic;color:rgba(245,239,226,.018);line-height:1;white-space:nowrap;pointer-events:none}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.23,1,.32,1),transform .8s cubic-bezier(.23,1,.32,1)}
+.rv.on{opacity:1;transform:none}
+.rvl{opacity:0;transform:translateX(-32px);transition:opacity .8s cubic-bezier(.23,1,.32,1),transform .8s cubic-bezier(.23,1,.32,1)}
+.rvl.on{opacity:1;transform:none}
+.rvr{opacity:0;transform:translateX(32px);transition:opacity .8s cubic-bezier(.23,1,.32,1),transform .8s cubic-bezier(.23,1,.32,1)}
+.rvr.on{opacity:1;transform:none}
+[data-d="1"]{transition-delay:.08s}[data-d="2"]{transition-delay:.16s}[data-d="3"]{transition-delay:.24s}[data-d="4"]{transition-delay:.32s}[data-d="5"]{transition-delay:.4s}
+
+/* ── TEXT REVEAL (word-by-word) ── */
+.txt-reveal .word{display:inline-block;opacity:0;transform:translateY(20px) rotateX(-40deg);transition:opacity .5s cubic-bezier(.23,1,.32,1),transform .5s cubic-bezier(.23,1,.32,1)}
+.txt-reveal.on .word{opacity:1;transform:none}
+
+/* ── SECTION FLOAT (subtle parallax depth) ── */
+.sec-float{will-change:transform;transition:transform .1s linear}
+
+/* ── GLOW ACCENT on gold elements ── */
+.h2 em{text-shadow:0 0 40px rgba(184,132,42,.08)}
+.ast-n{background:linear-gradient(135deg,var(--gold),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ── GALLERY SECTION enhanced ── */
+#gallery{position:relative}
+#gallery::before{content:'';position:absolute;top:0;left:0;right:0;height:120px;background:linear-gradient(to bottom,var(--cream),var(--ink));pointer-events:none;z-index:1}
+#gallery::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to top,var(--cream2),var(--ink));pointer-events:none;z-index:1}
+
+/* ── MUSIC SECTION wave ── */
+#music{position:relative}
+#music::before{content:'';position:absolute;top:-50px;left:0;right:0;height:50px;background:var(--cream2);clip-path:ellipse(55% 100% at 50% 100%);z-index:2}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  #hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .about-layout{grid-template-columns:1fr 6px 1fr}
+  .about-img-col img{height:400px}
+  .edu-layout{grid-template-columns:1fr;gap:3rem}
+  .edu-left{position:static}
+  .contact-layout,.music-layout,.music-top{grid-template-columns:1fr;gap:3rem}
+  .yt-grid{grid-template-columns:1fr}
+  .works-header{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  nav{padding:1.2rem 1.5rem}
+  nav.scrolled{padding:.9rem 1.5rem}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(245,239,226,.98);flex-direction:column;padding:1.5rem;gap:1.2rem;border-bottom:1px solid rgba(26,22,18,.1)}
+  .nav-links.open{display:flex}
+  .ham{display:flex}
+  .c{padding:0 1.5rem}
+  .sp{padding:5rem 0}
+  .hero-left{padding:3rem 1.5rem}
+  .about-layout{grid-template-columns:1fr;gap:0}
+  .about-mid-col{display:none}
+  .about-text-col{padding:3rem 1.5rem}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;perspective:none}
+  .g{height:200px}.g1,.g2,.g3,.g4,.g5,.g6,.g7,.g8,.g9{grid-column:span 1;grid-row:span 1}
+  .g-glass{padding:.6rem .8rem}
+  .g-l{font-size:.48rem;letter-spacing:.15em}
+  .cf2{grid-template-columns:1fr}
+  .foot-bot{flex-direction:column;gap:.8rem;text-align:center}
+  .foot-links{justify-content:center;flex-wrap:wrap}
+  .photo-strip{height:180px}
+  .photo-strip-quote span{font-size:1.2rem}
+}
+</style>
+</head>
+<body>
+
+
+<!-- LOADER -->
+<div id="loader">
+  <svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" style="width:clamp(300px,50vw,600px);height:auto;opacity:0;animation:fadeUp .9s ease both .3s">
+    <rect x="20" y="10" width="440" height="260" fill="none" stroke="#B8842A" stroke-width=".6"/>
+    <rect x="26" y="16" width="428" height="248" fill="none" stroke="#D4A84C" stroke-width=".3" opacity=".4"/>
+    <path d="M20,35 L20,10 L45,10" fill="none" stroke="#B8842A" stroke-width="1.5"/>
+    <path d="M460,35 L460,10 L435,10" fill="none" stroke="#B8842A" stroke-width="1.5"/>
+    <path d="M20,245 L20,270 L45,270" fill="none" stroke="#B8842A" stroke-width="1.5"/>
+    <path d="M460,245 L460,270 L435,270" fill="none" stroke="#B8842A" stroke-width="1.5"/>
+    <line x1="140" y1="42" x2="210" y2="42" stroke="#B8842A" stroke-width=".7"/>
+    <circle cx="220" cy="42" r="2" fill="#B8842A"/>
+    <line x1="230" y1="42" x2="240" y2="42" stroke="#B8842A" stroke-width=".7"/>
+    <circle cx="250" cy="42" r="1.2" fill="#D4A84C"/>
+    <line x1="260" y1="42" x2="340" y2="42" stroke="#B8842A" stroke-width=".7"/>
+    <text x="240" y="90" text-anchor="middle" font-family="'Playfair Display',serif" font-size="30" font-weight="300" letter-spacing="22" fill="#7A6E62">MUSTAFA</text>
+    <text x="135" y="175" font-family="'Playfair Display',serif" font-size="140" font-weight="900" font-style="italic" fill="#D4A84C" opacity=".08">E</text>
+    <text x="240" y="170" text-anchor="middle" font-family="'Playfair Display',serif" font-size="82" font-weight="700" font-style="italic" fill="#F8F2E8">Erhan</text>
+    <path d="M130,190 Q180,200 240,190 Q300,180 350,190" fill="none" stroke="#B8842A" stroke-width=".8"/>
+    <line x1="170" y1="212" x2="195" y2="212" stroke="#B8842A" stroke-width=".6"/>
+    <circle cx="205" cy="212" r="1.5" fill="#B8842A"/>
+    <text x="240" y="216" text-anchor="middle" font-family="'Inter',sans-serif" font-size="7.5" font-weight="400" letter-spacing="5" fill="#B8842A">MÜZİSYEN &amp; SANATÇI</text>
+    <circle cx="275" cy="212" r="1.5" fill="#B8842A"/>
+    <line x1="285" y1="212" x2="310" y2="212" stroke="#B8842A" stroke-width=".6"/>
+    <line x1="215" y1="235" x2="265" y2="235" stroke="#D4A84C" stroke-width=".3" opacity=".25"/>
+    <line x1="212" y1="239" x2="268" y2="239" stroke="#D4A84C" stroke-width=".4" opacity=".2"/>
+    <line x1="210" y1="243" x2="270" y2="243" stroke="#D4A84C" stroke-width=".5" opacity=".18"/>
+    <line x1="208" y1="247" x2="272" y2="247" stroke="#D4A84C" stroke-width=".6" opacity=".15"/>
+    <line x1="206" y1="251" x2="274" y2="251" stroke="#D4A84C" stroke-width=".7" opacity=".12"/>
+  </svg>
+  <div class="ld-b"><div class="ld-f"></div></div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="#hero"><span style="font-weight:300;letter-spacing:.18em;font-size:.7rem;font-style:normal;text-transform:uppercase;color:var(--ink3)">MUSTAFA</span> <span style="font-weight:700;font-style:italic;font-size:1.2rem">Erhan</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" data-tr="Hakkında" data-en="About">Hakkında</a></li>
+    <li><a href="#works" data-tr="Eserler" data-en="Works">Eserler</a></li>
+    <li><a href="#gallery" data-tr="Galeri" data-en="Gallery">Galeri</a></li>
+    <li><a href="#music" data-tr="Müzik" data-en="Music">Müzik</a></li>
+    <li><a href="#education" data-tr="Kariyer" data-en="Career">Kariyer</a></li>
+    <li><a href="#contact" data-tr="İletişim" data-en="Contact">İletişim</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-btn">
+      <span class="lang-opt active" id="opt-tr" onclick="setLang('tr')">TR</span>
+      <span class="lang-opt" id="opt-en" onclick="setLang('en')">EN</span>
+    </div>
+    <div class="ham" id="ham" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-left-bg" id="heroBg"></div>
+    <div class="hero-left-grad"></div>
+    <div class="hero-left-content">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span class="hero-eyebrow-txt" data-tr="Müzisyen &amp; Sanatçı" data-en="Musician &amp; Artist">Müzisyen &amp; Sanatçı</span>
+      </div>
+      <div class="hero-name">
+        <span class="n1">Mustafa</span>
+        <span class="n2">Erhan</span>
+      </div>
+      <p class="hero-desc-left" data-tr="Türkiye, İspanya, İtalya, Almanya ve Fransa'da sahne alan uluslararası klasik gitar sanatçısı." data-en="An international classical guitar artist who has performed in Turkey, Spain, Italy, Germany and France.">Türkiye, İspanya, İtalya, Almanya ve Fransa'da sahne alan uluslararası klasik gitar sanatçısı.</p>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-top">
+      <div class="hero-issue">
+        <span data-tr="Sanatçı Profili" data-en="Artist Profile">Sanatçı Profili</span>
+        <span>2026</span>
+      </div>
+    </div>
+    <div class="hero-right-mid">
+      <div class="hero-countries">
+        <div class="hc" data-tr="Türkiye" data-en="Turkey">Türkiye</div>
+        <div class="hc" data-tr="İspanya" data-en="Spain">İspanya</div>
+        <div class="hc" data-tr="İtalya" data-en="Italy">İtalya</div>
+        <div class="hc" data-tr="Almanya" data-en="Germany">Almanya</div>
+        <div class="hc" data-tr="Fransa" data-en="France">Fransa</div>
+      </div>
+      <div class="hero-cta-wrap">
+        <a class="btn-dark" href="#about"><span data-tr="Keşfet" data-en="Explore">Keşfet</span></a>
+        <a class="btn-outline" href="#music"><span data-tr="Dinle" data-en="Listen">Dinle</span></a>
+      </div>
+    </div>
+    <div class="hero-right-bot">
+      <div class="hero-scroll-area">
+        <span class="hero-scroll-txt" data-tr="Kaydır" data-en="Scroll">Kaydır</span>
+        <div class="hero-scroll-ln"></div>
+      </div>
+      <div class="hero-nums-bot">
+        <div class="hn"><div class="hn-v">5</div><div class="hn-l" data-tr="Ülke" data-en="Countries">Ülke</div></div>
+        <div class="hn"><div class="hn-v">20+</div><div class="hn-l" data-tr="Yıl" data-en="Years">Yıl</div></div>
+        <div class="hn"><div class="hn-v">4</div><div class="hn-l" data-tr="Üniversite" data-en="Universities">Üniversite</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-t">
+    <div class="si"><span>Klasik Gitar</span><div class="si-dot"></div></div>
+    <div class="si"><span>Classical Guitar</span><div class="si-dot"></div></div>
+    <div class="si"><span>Halk Müziği</span><div class="si-dot"></div></div>
+    <div class="si"><span>Folk Music</span><div class="si-dot"></div></div>
+    <div class="si"><span>Flamenko</span><div class="si-dot"></div></div>
+    <div class="si"><span>Flamenco</span><div class="si-dot"></div></div>
+    <div class="si"><span>İspanya · España</span><div class="si-dot"></div></div>
+    <div class="si"><span>İtalya · Italia</span><div class="si-dot"></div></div>
+    <div class="si"><span>Almanya · Deutschland</span><div class="si-dot"></div></div>
+    <div class="si"><span>Fransa · France</span><div class="si-dot"></div></div>
+    <div class="si"><span>Klasik Gitar</span><div class="si-dot"></div></div>
+    <div class="si"><span>Classical Guitar</span><div class="si-dot"></div></div>
+    <div class="si"><span>Halk Müziği</span><div class="si-dot"></div></div>
+    <div class="si"><span>Folk Music</span><div class="si-dot"></div></div>
+    <div class="si"><span>Flamenko</span><div class="si-dot"></div></div>
+    <div class="si"><span>Flamenco</span><div class="si-dot"></div></div>
+    <div class="si"><span>İspanya · España</span><div class="si-dot"></div></div>
+    <div class="si"><span>İtalya · Italia</span><div class="si-dot"></div></div>
+    <div class="si"><span>Almanya · Deutschland</span><div class="si-dot"></div></div>
+    <div class="si"><span>Fransa · France</span><div class="si-dot"></div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-layout">
+    <div class="about-img-col rvl">
+      <img src="https://mustafaerhan.com/wp-content/uploads/2023/01/GITAR.jpeg" alt="Mustafa Erhan"/>
+    </div>
+    <div class="about-mid-col"></div>
+    <div class="about-text-col rvr">
+      <div class="tag" data-tr="Hakkında" data-en="About">Hakkında</div>
+      <h2 class="h2" data-tr="Müziğin&lt;br&gt;&lt;em&gt;Evrensel Dili&lt;/em&gt;" data-en="The Universal&lt;br&gt;&lt;em&gt;Language of Music&lt;/em&gt;">Müziğin<br><em>Evrensel Dili</em></h2>
+      <div class="about-body">
+        <p class="about-lead" data-tr="&quot;Müzik, sınır tanımayan tek evrensel dildir — ve ben bu dili 5 yaşımdan bu yana, tüm kalbimle konuşuyorum.&quot;" data-en="&quot;Music is the only universal language without boundaries — and I have been speaking it wholeheartedly since the age of 5.&quot;">"Müzik, sınır tanımayan tek evrensel dildir — ve ben bu dili 5 yaşımdan bu yana, tüm kalbimle konuşuyorum."</p>
+        <p data-tr="&lt;strong&gt;Mustafa Erhan&lt;/strong&gt;, Halk müziği ve Klasik müzik alanlarında uluslararası arenada iz bırakmış bir gitar sanatçısıdır. Müzik dünyasına 5 yaşında bağlama çalarak adım atan sanatçı, insanlara dokunan yanını keşfederek Avrupa'nın farklı ülkelerinde kendini gösterdi. Bugün klasik gitarın evrensel dilini, kültürleri birleştiren bir köprü olarak kullanmaktadır." data-en="&lt;strong&gt;Mustafa Erhan&lt;/strong&gt; is a guitar artist who has made his mark on the international stage in the fields of Folk Music and Classical Music. Having entered the world of music at the age of 5 by playing bağlama, he discovered his ability to touch people's hearts and showcased his talent across Europe. Today, he uses the universal language of classical guitar as a bridge connecting cultures."><strong>Mustafa Erhan</strong>, Halk müziği ve Klasik müzik alanlarında uluslararası arenada iz bırakmış bir gitar sanatçısıdır. Müzik dünyasına 5 yaşında bağlama çalarak adım atan sanatçı, insanlara dokunan yanını keşfederek Avrupa'nın farklı ülkelerinde kendini gösterdi. Bugün klasik gitarın evrensel dilini, kültürleri birleştiren bir köprü olarak kullanmaktadır.</p>
+        <p data-tr="İspanya ve İtalya'da klasik gitar ustalık sınıflarında dersler veren sanatçı; flamenko müziğinin önemli isimlerinden &lt;strong&gt;Juan Miguel Jimenez&lt;/strong&gt; ve klasik gitarın ustası &lt;strong&gt;JoseMaria Gallardo del Rey&lt;/strong&gt; ile birlikte sahne almıştır. Türkiye, İspanya, İtalya, Almanya ve Fransa'da konserler veren Mustafa Erhan, hâlen &lt;strong&gt;Prof. Dr. Ahmet KANNECi&lt;/strong&gt;'nin rehberliğinde klasik gitarı muhafaza etmeye ve hayatlara dokunmaya devam etmektedir." data-en="A sought-after instructor at classical guitar masterclasses in Spain and Italy, he has shared the stage with &lt;strong&gt;Juan Miguel Jimenez&lt;/strong&gt;, one of the leading figures of flamenco, and classical guitar virtuoso &lt;strong&gt;JoseMaria Gallardo del Rey&lt;/strong&gt;. With concerts across Turkey, Spain, Italy, Germany and France, Mustafa Erhan continues to preserve the art of classical guitar and touch lives under the guidance of &lt;strong&gt;Prof. Dr. Ahmet KANNECi&lt;/strong&gt;.">İspanya ve İtalya'da klasik gitar ustalık sınıflarında dersler veren sanatçı; flamenko müziğinin önemli isimlerinden <strong>Juan Miguel Jimenez</strong> ve klasik gitarın ustası <strong>JoseMaria Gallardo del Rey</strong> ile birlikte sahne almıştır. Türkiye, İspanya, İtalya, Almanya ve Fransa'da konserler veren Mustafa Erhan, hâlen <strong>Prof. Dr. Ahmet KANNECi</strong>'nin rehberliğinde klasik gitarı muhafaza etmeye ve hayatlara dokunmaya devam etmektedir.</p>
+      </div>
+      <div class="about-stats">
+        <div class="ast"><div class="ast-n">5</div><div class="ast-l" data-tr="Ülke" data-en="Countries">Ülke</div></div>
+        <div class="ast"><div class="ast-n">4</div><div class="ast-l" data-tr="Üniversite" data-en="Universities">Üniversite</div></div>
+        <div class="ast"><div class="ast-n">20+</div><div class="ast-l" data-tr="Yıl Deneyim" data-en="Years Experience">Yıl Deneyim</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP 1 -->
+<div class="photo-strip" data-parallax-strip>
+  <img src="https://mustafaerhan.com/wp-content/uploads/2023/01/DOGAYLA-MUZIGE-KULAK-VER.jpeg" alt=""/>
+  <div class="photo-strip-overlay"></div>
+  <div class="photo-strip-quote"><span data-tr="&ldquo;Müzik ruhun dilidir&rdquo;" data-en="&ldquo;Music is the language of the soul&rdquo;">&ldquo;Müzik ruhun dilidir&rdquo;</span></div>
+</div>
+
+<!-- WORKS -->
+<section id="works" class="sp">
+  <div class="c">
+    <div class="works-header rv">
+      <div>
+        <div class="tag" data-tr="Kompozisyonlar" data-en="Compositions">Kompozisyonlar</div>
+        <h2 class="h2" data-tr="Seçili &lt;em&gt;Eserler&lt;/em&gt;" data-en="Selected &lt;em&gt;Works&lt;/em&gt;">Seçili <em>Eserler</em></h2>
+      </div>
+      <p class="works-header-r" data-tr="Halk müziğinden klasik müziğe uzanan bu eserler; kültürel derinliği ve evrensel duyarlılığı bir arada barındırarak hayatlarımıza dokunmaya devam etmektedir." data-en="These works spanning from folk music to classical music continue to touch our lives, combining cultural depth with universal sensitivity.">Halk müziğinden klasik müziğe uzanan bu eserler; kültürel derinliği ve evrensel duyarlılığı bir arada barındırarak hayatlarımıza dokunmaya devam etmektedir.</p>
+    </div>
+    <div class="rv">
+      <div class="witem"><span class="wi-num">01</span><span class="wi-name">Canto De Amor Cubano</span><span class="wi-arr">→</span></div>
+      <div class="witem"><span class="wi-num">02</span><span class="wi-name">Ses Kerido</span><span class="wi-arr">→</span></div>
+      <div class="witem"><span class="wi-num">03</span><span class="wi-name">Pasakaglia</span><span class="wi-arr">→</span></div>
+      <div class="witem"><span class="wi-num">04</span><span class="wi-name">Göç</span><span class="wi-arr">→</span></div>
+      <div class="witem"><span class="wi-num">05</span><span class="wi-name">Milango Citlallin</span><span class="wi-arr">→</span></div>
+      <p style="font-family:'EB Garamond',serif;font-size:1rem;font-style:italic;color:var(--ink3);margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(26,22,18,.08)" data-tr="…ve daha birçok çalışmasıyla müzikseverlerin hayatına dokunmaya devam ediyor." data-en="…and continues to touch the lives of music lovers with many more works.">…ve daha birçok çalışmasıyla müzikseverlerin hayatına dokunmaya devam ediyor.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="c">
+    <div class="gallery-head rv">
+      <div>
+        <div class="tag" data-tr="Fotoğraflar" data-en="Photography">Fotoğraflar</div>
+        <h2 class="h2" style="margin-bottom:0" data-tr="Galeri" data-en="Gallery">Galeri</h2>
+      </div>
+      <div class="gal-n">09</div>
+    </div>
+    <div class="gal-grid">
+      <div class="g g1" onclick="openLb(0)"><img src="https://mustafaerhan.com/wp-content/uploads/2023/01/PIYANONUN-ESSIZ-NOTALARIYLA...-1.jpeg" alt="" style="object-position:center 25%"/><div class="g-ov"></div><div class="g-glass"><span class="g-l" data-tr="Piyanonun Eşsiz Notalarıyla…" data-en="With the Unique Notes of the Piano…">Piyanonun Eşsiz Notalarıyla…</span><span class="g-icon">↗</span></div></div>
+      <div class="g g2" onclick="openLb(1)"><img src="https://mustafaerhan.com/wp-content/uploads/2023/01/STUDYO-1.jpeg" alt="" style="object-position:center 20%"/><div class="g-ov"></div><div class="g-glass"><span class="g-l" data-tr="Stüdyo" data-en="Studio">Stüdyo</span><span class="g-icon">↗</span></div></div>
+      <div class="g g3" onclick="openLb(2)"><img src="https://mustafaerhan.com/wp-content/uploads/2023/01/MUZIGE-KULAK-VER-1.jpeg" alt="" style="object-position:center 15%"/><div class="g-ov"></div><div class="g-glass"><span class="g-l" data-tr="Müziğe Kulak Ver" data-en="Listen to the Music">Müziğe Kulak Ver</span><span class="g-icon">↗</span></div></div>
+      <div class="g g4" onclick="openLb(3)"><img src="https://mustafaerhan.com/wp-content/uploads/2023/01/TURK-SANAT-MUZIGI.jpeg" alt="" style="object-position:center 20%"/><div class="g-ov"></div><div class="g-glass"><span class="g-l" data-tr="Türk Halk Müziği" data-en="Turkish Folk Music">Türk Halk Müziği</span><span class="g-icon">↗</span></div></div>
+      <div class="g g5" onclick="openLb(4)"><img src="https://mustafaerhan.com/wp-content/uploads/2023/01/SEN-DE-BIZE-KATIL.jpeg" alt="" style="object-position:center 15%"/><div class="g-ov"></div><div class="g-glass"><span class="g-l" data-tr="Canım Kızım Asya ile" data-en="With My Dear Daughter Asya">Canım Kızım Asya ile</span><span class="g-icon">↗</span></div></div>
+      <div class="g g6" onclick="openLb(5)"><img src="https://mustafaerhan.com/wp-content/uploads/2023/01/DOGAYLA-MUZIGE-KULAK-VER.jpeg" alt="" style="object-position:center 20%"/><div class="g-ov"></div><div class="g-glass"><span class="g-l" data-tr="Doğayla Müziğe Kulak Ver" data-en="Music in Harmony with Nature">Doğayla Müziğe Kulak Ver</span><span class="g-icon">↗</span></div></div>
+      <div class="g g7" onclick="openLb(6)"><img src="https://mustafaerhan.com/wp-content/uploads/2023/01/DOGA-VE-MUZIK.jpeg" alt="" style="object-position:center 20%"/><div class="g-ov"></div><div class="g-glass"><span class="g-l" data-tr="Doğa ve Müzik" data-en="Nature and Music">Doğa ve Müzik</span><span class="g-icon">↗</span></div></div>
+      <div class="g g8" onclick="openLb(7)"><img src="https://mustafaerhan.com/wp-content/uploads/2023/01/GITAR.jpeg" alt="" style="object-position:center 20%"/><div class="g-ov"></div><div class="g-glass"><span class="g-l" data-tr="Gitar" data-en="Guitar">Gitar</span><span class="g-icon">↗</span></div></div>
+      <div class="g g9" onclick="openLb(8)"><img src="https://mustafaerhan.com/wp-content/uploads/2023/01/MUSTAFA-ERHAN.jpeg" alt="" style="object-position:center 20%"/><div class="g-ov"></div><div class="g-glass"><span class="g-l" data-tr="Mustafa Erhan" data-en="Mustafa Erhan">Mustafa Erhan</span><span class="g-icon">↗</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lb" onclick="lbBg(event)">
+  <button class="lb-x" onclick="closeLb()">&#215;</button>
+  <button class="lb-a lb-pv" onclick="lbNav(-1)">&#8592;</button>
+  <img id="lb-img" src="" alt=""/>
+  <button class="lb-a lb-nx" onclick="lbNav(1)">&#8594;</button>
+  <div class="lb-ct" id="lb-ct"></div>
+</div>
+
+<!-- PHOTO STRIP 2 -->
+<div class="photo-strip" data-parallax-strip>
+  <img src="https://mustafaerhan.com/wp-content/uploads/2023/01/DOGA-VE-MUZIK.jpeg" alt=""/>
+  <div class="photo-strip-overlay"></div>
+  <div class="photo-strip-quote"><span data-tr="&ldquo;Her nota bir hikâye anlatır&rdquo;" data-en="&ldquo;Every note tells a story&rdquo;">&ldquo;Her nota bir hikâye anlatır&rdquo;</span></div>
+</div>
+
+<!-- MUSIC -->
+<section id="music">
+  <div class="c">
+    <div class="music-top rv">
+      <div>
+        <div class="tag" data-tr="Müzik Platformları" data-en="Music Platforms">Müzik Platformları</div>
+        <h2 class="h2" data-tr="Tüm Albümler &amp; &lt;em&gt;Yayınlar&lt;/em&gt;" data-en="All Albums &amp; &lt;em&gt;Releases&lt;/em&gt;">Tüm Albümler &amp; <em>Yayınlar</em></h2>
+      </div>
+      <p style="font-family:'EB Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--ink3);line-height:1.7;align-self:flex-end" data-tr="Spotify, YouTube ve Instagram üzerinden tüm müziklerime ulaşabilirsiniz." data-en="You can find all my music on Spotify, YouTube and Instagram.">Spotify, YouTube ve Instagram üzerinden tüm müziklerime ulaşabilirsiniz.</p>
+    </div>
+    <div class="music-layout rv">
+      <div class="sp-wrap">
+        <iframe src="https://open.spotify.com/embed/artist/7mve4x9DCP237Y8I1UC4TK?utm_source=generator&theme=0" height="480" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+      <div class="music-sidebar">
+        <a class="m-plat yt-p" href="https://youtube.com/@mustafaerhanmusic" target="_blank" rel="noopener">
+          <div class="m-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></div>
+          <div class="m-info"><div class="m-name">YouTube</div><div class="m-sub" data-tr="Konserleri ve Videoları İzle" data-en="Watch Concerts & Videos">Konserleri ve Videoları İzle</div></div>
+          <span class="m-arr">↗</span>
+        </a>
+        <a class="m-plat ig-p" href="https://instagram.com/mustafaerhanmusic" target="_blank" rel="noopener">
+          <div class="m-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+          <div class="m-info"><div class="m-name">Instagram</div><div class="m-sub" data-tr="Takip Et" data-en="Follow">Takip Et</div></div>
+          <span class="m-arr">↗</span>
+        </a>
+        <div class="sp-info">
+          <div class="sp-info-title">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#1ed760"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.441 17.316c-.212.346-.664.455-1.01.243-2.764-1.689-6.244-2.07-10.345-1.134-.394.09-.787-.155-.877-.549-.09-.394.155-.787.549-.877 4.487-1.026 8.337-.585 11.44 1.307.346.212.455.664.243 1.01zm1.452-3.23c-.267.435-.836.571-1.271.304-3.162-1.943-7.984-2.506-11.724-1.37-.486.147-.999-.13-1.146-.616-.147-.486.13-.999.616-1.146 4.273-1.297 9.581-.668 13.22 1.557.435.267.571.836.305 1.271zm.125-3.362c-3.793-2.252-10.051-2.459-13.677-1.36-.581.177-1.197-.15-1.374-.732-.177-.581.15-1.197.732-1.374 4.158-1.264 11.07-1.019 15.431 1.573.524.311.697.99.386 1.514-.311.524-.99.697-1.498.379z"/></svg>
+            <span data-tr="Spotify'da Tüm Yayınlar" data-en="All Releases on Spotify">Spotify'da Tüm Yayınlar</span>
+          </div>
+          <p data-tr="Solda yer alan player'dan tüm albümler, EP'ler ve single'lara ulaşabilirsiniz." data-en="Use the player on the left to access all albums, EPs and singles.">Solda yer alan player'dan tüm albümler, EP'ler ve single'lara ulaşabilirsiniz.</p>
+          <a class="sp-open-link" href="https://open.spotify.com/artist/7mve4x9DCP237Y8I1UC4TK" target="_blank" rel="noopener">
+            <span data-tr="Spotify'da Aç ↗" data-en="Open on Spotify ↗">Spotify'da Aç ↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- YOUTUBE VIDEOS -->
+    <div class="yt-section rv">
+      <div class="yt-section-head">
+        <div>
+          <div class="tag" data-tr="Performanslar" data-en="Performances">Performanslar</div>
+          <h2 class="h2" style="font-size:clamp(1.6rem,3vw,2.8rem)" data-tr="Seçili &lt;em&gt;Videolar&lt;/em&gt;" data-en="Featured &lt;em&gt;Videos&lt;/em&gt;">Seçili <em>Videolar</em></h2>
+        </div>
+        <a class="btn-outline" href="https://youtube.com/@mustafaerhanmusic" target="_blank" rel="noopener" style="flex-shrink:0"><span data-tr="Tümünü İzle ↗" data-en="Watch All ↗">Tümünü İzle ↗</span></a>
+      </div>
+      <div class="yt-grid">
+        <a class="yt-card" href="https://www.youtube.com/watch?v=uJAXX9HgBbY" target="_blank" rel="noopener">
+          <div class="yt-thumb">
+            <img src="https://img.youtube.com/vi/uJAXX9HgBbY/maxresdefault.jpg" alt="El Tango del Sol y la Luna"/>
+            <div class="yt-play"></div>
+          </div>
+          <div class="yt-card-info">
+            <div class="yt-card-title">El Tango del Sol y la Luna</div>
+            <div class="yt-card-sub" data-tr="Orijinal Kompozisyon" data-en="Original Composition">Orijinal Kompozisyon</div>
+          </div>
+        </a>
+        <a class="yt-card" href="https://www.youtube.com/watch?v=rSfYU0nq2SQ" target="_blank" rel="noopener">
+          <div class="yt-thumb">
+            <img src="https://img.youtube.com/vi/rSfYU0nq2SQ/maxresdefault.jpg" alt="Ikigai"/>
+            <div class="yt-play"></div>
+          </div>
+          <div class="yt-card-info">
+            <div class="yt-card-title">Ikigai</div>
+            <div class="yt-card-sub" data-tr="Klasik Gitar Performansı" data-en="Classical Guitar Performance">Klasik Gitar Performansı</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="c">
+    <div class="edu-layout">
+      <div class="edu-left rvl">
+        <div class="tag" data-tr="Kariyer" data-en="Career">Kariyer</div>
+        <h2 class="h2" data-tr="Eğitim &amp;&lt;br&gt;&lt;em&gt;Deneyim&lt;/em&gt;" data-en="Education &amp;&lt;br&gt;&lt;em&gt;Experience&lt;/em&gt;">Eğitim &amp;<br><em>Deneyim</em></h2>
+        <p data-tr="Dört farklı üniversitede görev alan Mustafa Erhan, akademik kariyerini sahne deneyimiyle harmanlayarak müziğe çok yönlü bir bakış açısı kazandırmıştır." data-en="Having served at four different universities, Mustafa Erhan has brought a multifaceted perspective to music by blending his academic career with stage experience.">Dört farklı üniversitede görev alan Mustafa Erhan, akademik kariyerini sahne deneyimiyle harmanlayarak müziğe çok yönlü bir bakış açısı kazandırmıştır.</p>
+      </div>
+      <div class="edu-items rvr">
+        <div class="edu-it">
+          <div class="edu-ico">🎓</div>
+          <div><div class="edu-cat" data-tr="Lisans" data-en="Bachelor's Degree">Lisans</div><div class="edu-ttl" data-tr="Uludağ Üniversitesi" data-en="Uludağ University">Uludağ Üniversitesi</div><div class="edu-dsc" data-tr="Müzik Bölümü" data-en="Department of Music">Müzik Bölümü</div></div>
+        </div>
+        <div class="edu-it">
+          <div class="edu-ico">🏛</div>
+          <div><div class="edu-cat" data-tr="Yüksek Lisans" data-en="Master's Degree">Yüksek Lisans</div><div class="edu-ttl" data-tr="Afyon Kocatepe Üniversitesi Devlet Konservatuarı" data-en="Afyon Kocatepe University State Conservatory">Afyon Kocatepe Üniversitesi Devlet Konservatuarı</div><div class="edu-dsc" data-tr="Prof. Dr. Ahmet KANNECi danışmanlığında" data-en="Under the supervision of Prof. Dr. Ahmet KANNECi">Prof. Dr. Ahmet KANNECi danışmanlığında</div></div>
+        </div>
+        <div class="edu-it">
+          <div class="edu-ico">🎸</div>
+          <div><div class="edu-cat" data-tr="Uluslararası Masterclass" data-en="International Masterclass">Uluslararası Masterclass</div><div class="edu-ttl" data-tr="İspanya &amp; İtalya" data-en="Spain &amp; Italy">İspanya &amp; İtalya</div><div class="edu-dsc" data-tr="Juan Miguel Jimenez (Flamenko) · JoseMaria Gallardo del Rey (Klasik Gitar)" data-en="Juan Miguel Jimenez (Flamenco) · JoseMaria Gallardo del Rey (Classical Guitar)">Juan Miguel Jimenez (Flamenko) · JoseMaria Gallardo del Rey (Klasik Gitar)</div></div>
+        </div>
+        <div class="edu-it">
+          <div class="edu-ico">📍</div>
+          <div><div class="edu-cat" data-tr="Akademik Görevler" data-en="Academic Positions">Akademik Görevler</div><div class="edu-ttl" data-tr="4 Türk Üniversitesi" data-en="4 Turkish Universities">4 Türk Üniversitesi</div><div class="edu-dsc" data-tr="Uludağ · Süleyman Demirel · Mehmet Akif Ersoy · Afyon Kocatepe" data-en="Uludağ · Süleyman Demirel · Mehmet Akif Ersoy · Afyon Kocatepe">Uludağ · Süleyman Demirel · Mehmet Akif Ersoy · Afyon Kocatepe</div></div>
+        </div>
+        <div class="edu-it">
+          <div class="edu-ico">🌍</div>
+          <div><div class="edu-cat" data-tr="Uluslararası Konserler" data-en="International Concerts">Uluslararası Konserler</div><div class="edu-ttl" data-tr="5 Ülke" data-en="5 Countries">5 Ülke</div><div class="edu-dsc" data-tr="Türkiye · İspanya · İtalya · Almanya · Fransa" data-en="Turkey · Spain · Italy · Germany · France">Türkiye · İspanya · İtalya · Almanya · Fransa</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="c">
+    <div class="contact-layout">
+      <div class="rvl">
+        <div class="tag" data-tr="İletişim" data-en="Contact">İletişim</div>
+        <h2 class="h2" data-tr="Benimle&lt;br&gt;&lt;em&gt;İletişime Geç&lt;/em&gt;" data-en="Get in&lt;br&gt;&lt;em&gt;Touch&lt;/em&gt;">Benimle<br><em>İletişime Geç</em></h2>
+        <div class="big-txt">Get<br>In<br>Touch</div>
+        <p data-tr="Konser, iş birliği ve tüm diğer talepler için sosyal medya kanallarım üzerinden iletişime geçebilirsiniz." data-en="For concerts, collaborations and all other inquiries, please feel free to reach out through my social media channels.">Konser, iş birliği ve tüm diğer talepler için sosyal medya kanallarım üzerinden iletişime geçebilirsiniz.</p>
+        <div class="contact-links">
+          <a class="cl" href="https://instagram.com/mustafaerhanmusic" target="_blank" rel="noopener">
+            <div class="cl-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+            <div><div class="cl-nm">Instagram</div><div class="cl-hd">@mustafaerhanmusic</div></div>
+            <span class="cl-ar">↗</span>
+          </a>
+          <a class="cl" href="https://youtube.com/@mustafaerhanmusic" target="_blank" rel="noopener">
+            <div class="cl-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></div>
+            <div><div class="cl-nm">YouTube</div><div class="cl-hd">@mustafaerhanmusic</div></div>
+            <span class="cl-ar">↗</span>
+          </a>
+          <a class="cl" href="https://open.spotify.com/artist/7mve4x9DCP237Y8I1UC4TK" target="_blank" rel="noopener">
+            <div class="cl-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.441 17.316c-.212.346-.664.455-1.01.243-2.764-1.689-6.244-2.07-10.345-1.134-.394.09-.787-.155-.877-.549-.09-.394.155-.787.549-.877 4.487-1.026 8.337-.585 11.44 1.307.346.212.455.664.243 1.01zm1.452-3.23c-.267.435-.836.571-1.271.304-3.162-1.943-7.984-2.506-11.724-1.37-.486.147-.999-.13-1.146-.616-.147-.486.13-.999.616-1.146 4.273-1.297 9.581-.668 13.22 1.557.435.267.571.836.305 1.271zm.125-3.362c-3.793-2.252-10.051-2.459-13.677-1.36-.581.177-1.197-.15-1.374-.732-.177-.581.15-1.197.732-1.374 4.158-1.264 11.07-1.019 15.431 1.573.524.311.697.99.386 1.514-.311.524-.99.697-1.498.379z"/></svg></div>
+            <div><div class="cl-nm">Spotify</div><div class="cl-hd" data-tr="Müzik Dinle" data-en="Listen to Music">Müzik Dinle</div></div>
+            <span class="cl-ar">↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="rvr">
+        <form class="cform" onsubmit="return false;">
+          <div class="cf2">
+            <div class="fg"><label data-tr="Ad" data-en="First Name">Ad</label><input type="text" data-placeholder-tr="Adınız" data-placeholder-en="First name" placeholder="Adınız"/></div>
+            <div class="fg"><label data-tr="Soyad" data-en="Last Name">Soyad</label><input type="text" data-placeholder-tr="Soyadınız" data-placeholder-en="Last name" placeholder="Soyadınız"/></div>
+          </div>
+          <div class="fg"><label data-tr="E-posta" data-en="Email">E-posta</label><input type="email" data-placeholder-tr="ornek@email.com" data-placeholder-en="example@email.com" placeholder="ornek@email.com"/></div>
+          <div class="fg"><label data-tr="Mesaj" data-en="Message">Mesaj</label><textarea data-placeholder-tr="Mesajınızı yazın…" data-placeholder-en="Write your message…" placeholder="Mesajınızı yazın…"></textarea></div>
+          <button class="btn-send" type="submit"><span data-tr="Gönder" data-en="Send">Gönder</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-bg-txt">Erhan</div>
+  <div class="c">
+    <div class="foot-top">
+      <div class="foot-logo"><span style="font-weight:300;letter-spacing:.18em;font-size:.75rem;font-style:normal;text-transform:uppercase;color:var(--ink3)">MUSTAFA</span><br><span style="font-weight:700;font-style:italic;font-size:2.2rem">Erhan</span></div>
+      <div class="foot-tagline" data-tr="Müzisyen &amp; Sanatçı" data-en="Musician &amp; Artist">Müzisyen &amp; Sanatçı</div>
+      <div class="foot-social">
+        <a href="https://open.spotify.com/artist/7mve4x9DCP237Y8I1UC4TK" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.441 17.316c-.212.346-.664.455-1.01.243-2.764-1.689-6.244-2.07-10.345-1.134-.394.09-.787-.155-.877-.549-.09-.394.155-.787.549-.877 4.487-1.026 8.337-.585 11.44 1.307.346.212.455.664.243 1.01zm1.452-3.23c-.267.435-.836.571-1.271.304-3.162-1.943-7.984-2.506-11.724-1.37-.486.147-.999-.13-1.146-.616-.147-.486.13-.999.616-1.146 4.273-1.297 9.581-.668 13.22 1.557.435.267.571.836.305 1.271zm.125-3.362c-3.793-2.252-10.051-2.459-13.677-1.36-.581.177-1.197-.15-1.374-.732-.177-.581.15-1.197.732-1.374 4.158-1.264 11.07-1.019 15.431 1.573.524.311.697.99.386 1.514-.311.524-.99.697-1.498.379z"/></svg></a>
+        <a href="https://youtube.com/@mustafaerhanmusic" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+        <a href="https://instagram.com/mustafaerhanmusic" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      </div>
+      <div class="foot-divider"></div>
+      <div class="foot-links">
+        <a href="#about" data-tr="Hakkında" data-en="About">Hakkında</a>
+        <a href="#works" data-tr="Eserler" data-en="Works">Eserler</a>
+        <a href="#gallery" data-tr="Galeri" data-en="Gallery">Galeri</a>
+        <a href="#music" data-tr="Müzik" data-en="Music">Müzik</a>
+        <a href="#contact" data-tr="İletişim" data-en="Contact">İletişim</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <div class="foot-copy">© 2026 Mustafa Erhan</div>
+      <div class="foot-craft" data-tr="Özenle Tasarlandı" data-en="Crafted with Care">Özenle Tasarlandı</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* LOADER */
+window.addEventListener('load',()=>{
+  setTimeout(()=>{const l=document.getElementById('loader');l.style.transition='opacity .7s ease';l.style.opacity=0;setTimeout(()=>l.style.display='none',700)},2000);
+});
+
+/* NAV */
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>80));
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open')}
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+
+/* HERO PARALLAX + PHOTO STRIP PARALLAX + SECTION FLOAT */
+const heroBg=document.getElementById('heroBg');
+const strips=document.querySelectorAll('[data-parallax-strip] img');
+const floats=document.querySelectorAll('.sec-float');
+window.addEventListener('scroll',()=>{
+  const sy=scrollY;
+  if(heroBg)heroBg.style.transform=`scale(1.05) translateY(${sy*.2}px)`;
+  strips.forEach(img=>{
+    const rect=img.parentElement.getBoundingClientRect();
+    const off=(rect.top+rect.height/2-innerHeight/2)*.15;
+    img.style.transform=`translateY(${off}px) scale(1.1)`;
+  });
+  floats.forEach(el=>{
+    const rect=el.getBoundingClientRect();
+    const off=(rect.top-innerHeight/2)*.02;
+    el.style.transform=`translateY(${off}px)`;
+  });
+});
+
+/* TEXT REVEAL (word-by-word on .h2 headings) */
+document.querySelectorAll('.h2').forEach(h=>{
+  if(h.closest('.gallery-head'))return;
+  const html=h.innerHTML;
+  const words=html.replace(/<br\s*\/?>/gi,' <br> ').split(/\s+/).filter(w=>w);
+  h.innerHTML=words.map((w,i)=>{
+    if(w==='<br>')return '<br>';
+    return `<span class="word" style="transition-delay:${i*.07}s">${w} </span>`;
+  }).join('');
+  h.classList.add('txt-reveal');
+});
+
+/* REVEAL */
+const ro=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.1});
+document.querySelectorAll('.rv,.rvl,.rvr,.edu-it,.txt-reveal,.g').forEach(el=>ro.observe(el));
+
+/* 3D TILT on gallery items */
+document.querySelectorAll('.g').forEach(g=>{
+  g.addEventListener('mousemove',e=>{
+    const r=g.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5;
+    const y=(e.clientY-r.top)/r.height-.5;
+    g.style.transform=`perspective(600px) rotateY(${x*10}deg) rotateX(${-y*10}deg) scale(1.03)`;
+  });
+  g.addEventListener('mouseleave',()=>{
+    g.style.transform='';
+    g.style.transition='transform .5s cubic-bezier(.23,1,.32,1)';
+    setTimeout(()=>g.style.transition='',500);
+  });
+  g.addEventListener('mouseenter',()=>{
+    g.style.transition='none';
+  });
+});
+
+/* LIGHTBOX */
+const lbEl=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbCt=document.getElementById('lb-ct');
+const srcs=[
+  'https://mustafaerhan.com/wp-content/uploads/2023/01/PIYANONUN-ESSIZ-NOTALARIYLA...-1.jpeg',
+  'https://mustafaerhan.com/wp-content/uploads/2023/01/STUDYO-1.jpeg',
+  'https://mustafaerhan.com/wp-content/uploads/2023/01/MUZIGE-KULAK-VER-1.jpeg',
+  'https://mustafaerhan.com/wp-content/uploads/2023/01/TURK-SANAT-MUZIGI.jpeg',
+  'https://mustafaerhan.com/wp-content/uploads/2023/01/SEN-DE-BIZE-KATIL.jpeg',
+  'https://mustafaerhan.com/wp-content/uploads/2023/01/DOGAYLA-MUZIGE-KULAK-VER.jpeg',
+  'https://mustafaerhan.com/wp-content/uploads/2023/01/DOGA-VE-MUZIK.jpeg',
+  'https://mustafaerhan.com/wp-content/uploads/2023/01/GITAR.jpeg',
+  'https://mustafaerhan.com/wp-content/uploads/2023/01/MUSTAFA-ERHAN.jpeg'
+];
+let ci=0;
+function openLb(i){ci=i;lbImg.src=srcs[i];lbCt.textContent=(i+1)+' / '+srcs.length;lbEl.classList.add('on');document.body.style.overflow='hidden'}
+function closeLb(){lbEl.classList.remove('on');document.body.style.overflow=''}
+function lbBg(e){if(e.target===lbEl)closeLb()}
+function lbNav(d){ci=(ci+d+srcs.length)%srcs.length;lbImg.src=srcs[ci];lbCt.textContent=(ci+1)+' / '+srcs.length}
+document.addEventListener('keydown',e=>{
+  if(!lbEl.classList.contains('on'))return;
+  if(e.key==='Escape')closeLb();
+  if(e.key==='ArrowRight')lbNav(1);
+  if(e.key==='ArrowLeft')lbNav(-1);
+});
+
+/* LANGUAGE */
+let lang='tr';
+function setLang(l){
+  lang=l;
+  document.documentElement.setAttribute('data-lang',l);
+  document.getElementById('opt-tr').classList.toggle('active',l==='tr');
+  document.getElementById('opt-en').classList.toggle('active',l==='en');
+  document.querySelectorAll('[data-tr],[data-en]').forEach(el=>{
+    const v=el.getAttribute('data-'+l);
+    if(!v)return;
+    if(v.includes('<'))el.innerHTML=v;
+    else el.textContent=v;
+  });
+  document.querySelectorAll('[data-placeholder-'+l+']').forEach(el=>{
+    el.placeholder=el.getAttribute('data-placeholder-'+l);
+  });
+  document.documentElement.lang=l;
+  document.title=l==='tr'?'Mustafa Erhan — Sanatçı':'Mustafa Erhan — Artist';
+}
+</script>
+</body>
+</html>
